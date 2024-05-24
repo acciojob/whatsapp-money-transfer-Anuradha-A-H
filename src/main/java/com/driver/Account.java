@@ -10,7 +10,11 @@ public class Account {
 
     public void sendMoney(Account receiver, int amount) {
     	// your code goes here
-        receiver.receiveMoney(amount);
+        if(balance>amount)
+        {
+            receiver.receiveMoney(amount);
+            balance -=amount;
+        }
     }
 
     public void receiveMoney(int amount) {
